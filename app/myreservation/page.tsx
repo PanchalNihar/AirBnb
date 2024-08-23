@@ -67,6 +67,3 @@ const MyReservation = () => {
   );
 };
 export default MyReservation;
-
-
-//22:56
