@@ -28,7 +28,7 @@ export default function RootLayout({
        {/* <Modal 
        label="Title"
        content={Content}
-       isOpen={true}/> */}\
+       isOpen={true}/> */}
        <LoginModal/>
        <SignupModal/>
       </body>
