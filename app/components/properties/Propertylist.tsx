@@ -15,6 +15,7 @@ const Propertylist = () => {
     const tmpProperties = await apiService.get("/api/properties/");
     setProperties(tmpProperties.data);
   };
+
   useEffect(() => {
     getProperties();
   }, []);

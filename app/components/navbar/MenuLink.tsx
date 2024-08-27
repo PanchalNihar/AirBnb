@@ -1,4 +1,4 @@
-"use cliemt";
+"use client";
 interface MenuLinkProps{
     label:String;
     onClick:()=>void

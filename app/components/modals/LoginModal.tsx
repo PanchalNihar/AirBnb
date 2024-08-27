@@ -13,7 +13,7 @@ const LoginModal = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const loginModal = useLoginModal();
-  const [showModal, setShowModal] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
 
   const submitLogin = async () => {
     const formdata = {
@@ -22,7 +22,7 @@ const LoginModal = () => {
     };
     
     try {
-      const response = await apiService.post("/api/auth/login/", JSON.stringify(formdata));
+      const response = await apiService.postWithoutToken("/api/auth/login/", (formdata));
 
       if (response.access) {
         // Handle login

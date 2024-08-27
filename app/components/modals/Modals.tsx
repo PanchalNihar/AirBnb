@@ -1,12 +1,12 @@
 "use client";
 import { useCallback, useEffect, useState } from "react";
-interface ModealProps {
-  label: String;
+interface ModalProps {
+  label: string;
   content: React.ReactElement;
   isOpen: boolean;
   close:()=>void
 }
-const Modal: React.FC<ModealProps> = ({ label, content, isOpen ,close}) => {
+const Modal: React.FC<ModalProps> = ({ label, content, isOpen ,close}) => {
   const [showModal, setShowModal] = useState(isOpen);
   useEffect(() => {
     setShowModal(isOpen);

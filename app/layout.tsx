@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 import Modal from "./components/modals/Modals";
+import AddPropertModal from "./components/modals/AddPropertyModal";
 import LoginModal from "./components/modals/LoginModal";
 import SignupModal from "./components/modals/SignupModal";
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function RootLayout({
        isOpen={true}/> */}
        <LoginModal/>
        <SignupModal/>
+       <AddPropertModal/>
       </body>
     </html>
   );

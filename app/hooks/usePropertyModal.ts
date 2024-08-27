@@ -1,12 +1,12 @@
 import {create} from "zustand"
-interface LoginModalStore{
+interface AddPropertyStore{
     isOpen: boolean;
     open:()=>void;
     close:()=>void
 }
-const useLoginModal=create<LoginModalStore>((set)=>({
+const usePropertyModal=create<AddPropertyStore>((set)=>({
     isOpen:false,
     open:() =>set({isOpen:true}),
     close:() =>set({isOpen:false})
 }))
-export default useLoginModal        
+export default usePropertyModal

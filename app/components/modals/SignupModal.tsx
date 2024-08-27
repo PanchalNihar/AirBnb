@@ -13,7 +13,7 @@ const SignupModal = () => {
   const [password2, setPassword2] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
   const signupModal = useSignupModal();
-  const [showModal, setShowModal] = useState();
+  // const [showModal, setShowModal] = useState();
 
   const submitSignup = async () => {
     const formData = {
@@ -21,9 +21,9 @@ const SignupModal = () => {
       password1: password1,
       password2: password2,
     };
-    const response = await apiService.post("/api/auth/register/", JSON.stringify(formData));
+    const response = await apiService.postWithoutToken("/api/auth/register/",(formData));
     if (response.access) {
-      //handellogin
+      //handellogin 
       handleLogin(response.user.pk,response.access,response.refresh)
       signupModal.close();
       router.push("/");
@@ -37,7 +37,7 @@ const SignupModal = () => {
   };
   const content = (
     <>
-      <form className="space-y-4" action={submitSignup}>
+      <form className="space-y-4" onSubmit={submitSignup}>
         <input
           onChange={(e) => setEmail(e.target.value)}
           type="email"

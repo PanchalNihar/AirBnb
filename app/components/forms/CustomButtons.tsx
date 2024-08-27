@@ -1,7 +1,7 @@
 interface CustomButtonsProps {
-  label: String;
+  label: string;
   onClick: () => void;
-  className?: String;
+  className?: string;
 }
 const CustomButtons: React.FC<CustomButtonsProps> = ({
   label,
