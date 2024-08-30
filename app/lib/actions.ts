@@ -8,7 +8,8 @@ export async function handleLogin(
   accessToken: string,
   refreshToken: string
 ) {
-  // Set session cookies
+  console.log("Setting tokens:", { userId, accessToken, refreshToken }); // Debugging line
+
   cookies().set("session_userId", userId, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
@@ -16,12 +17,12 @@ export async function handleLogin(
     path: "/",
   });
 
-  cookies().set("session_access_token", accessToken, {
+  cookies().set('session_access_token', accessToken, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    secure:  process.env.NODE_ENV === "production",
     maxAge: 60 * 60, // 60 minutes
-    path: "/",
-  });
+    path: '/'
+});
 
   cookies().set("session_refresh_token", refreshToken, {
     httpOnly: true,
@@ -41,10 +42,13 @@ export async function resetAuthCookies() {
 // Function to get the user ID from cookies
 export async function getUserId() {
   const userId = cookies().get("session_userId")?.value;
+  console.log(userId)
   return userId || null; // Return null if userId is undefined
 }
 
 export async function getAccessToken() {
-  const accessToken = cookies().get("session_access_token")?.value;
-  return accessToken;
+  let accessToken = cookies().get('session_access_token')?.value;
+  return accessToken || null;
 }
+
+

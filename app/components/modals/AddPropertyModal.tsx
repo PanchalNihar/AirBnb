@@ -11,7 +11,8 @@ import apiService from "@/app/services/apiService";
 import { useRouter } from "next/navigation";
 const AddPropertModal = () => {
   const addPropertymodal = usePropertyModal();
-  const router=useRouter()
+  const router = useRouter();
+  const [errors, setErrors] = useState<string[]>([]);
   const [currentStep, setCurrentStep] = useState(1);
   const [dataCategory, setDataCategory] = useState("");
   const [dataTitle, setDataTitle] = useState("");
@@ -29,8 +30,8 @@ const AddPropertModal = () => {
     if (event.target.files && event.target.files.length > 0) {
       const tmpImage = event.target.files[0];
       setDataImage(tmpImage);
-    }else{
-      console.log('error')
+    } else {
+      console.log("error");
     }
   };
 
@@ -45,25 +46,31 @@ const AddPropertModal = () => {
       dataCategory
     ) {
       const formData = new FormData();
-      formData.append("title", dataTitle);              // Matches 'title'
-      formData.append("description", dataDescription);  // Matches 'description'
-      formData.append("price_per_night", dataPrice);    // Matches 'price_per_night'
-      formData.append("bedrooms", dataBedrooms);        // Matches 'bedrooms'
-      formData.append("bathrooms", dataBathrooms);      // Matches 'bathrooms'
-      formData.append("guests", dataGuests);            // Matches 'guests'
-      formData.append("country", dataCountry.label);    // Matches 'country'
-      formData.append("country_code", dataCountry.value); // Matches 'country_code'
-      formData.append("image", dataImage);              // Matches 'image'
-      
-      const response =await apiService.post('/api/properties/create/',formData)
+      formData.append("title", dataTitle);
+      formData.append("description", dataDescription);
+      formData.append("price_per_night", dataPrice);
+      formData.append("bedrooms", dataBedrooms);
+      formData.append("bathrooms", dataBathrooms);
+      formData.append("guests", dataGuests);
+      formData.append("country", dataCountry.label);
+      formData.append("country_code", dataCountry.value);
+      formData.append("image", dataImage);
+      formData.append("category", dataCategory);
+
+      const response = await apiService.post("/api/properties/create/",formData);
       if(response.success){
         console.log("Success")
         router.push('/')
-        addPropertymodal.close() //check this
+        addPropertymodal.close()
+      }else{
+        const tmperror:string[]=Object.values(response).map((error:any)=>{
+          return error
+        })
+        setErrors(tmperror)
       }
-      
     }
   };
+
   const content = (
     <>
       {currentStep == 1 ? (
@@ -206,6 +213,16 @@ const AddPropertModal = () => {
               </div>
             )}
           </div>
+          {errors.map((error, index) => {
+            return (
+              <div
+                key={index}
+                className="p-5 mb-4 bg-airbnb text-white rounded-xl opacity-80"
+              >
+                {error}
+              </div>
+            );
+          })}
           <CustomButtons
             label="previous"
             onClick={() => setCurrentStep(4)}

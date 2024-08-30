@@ -11,9 +11,9 @@ const Categories: React.FC<CategoriesProp> = ({
     <>
       <div className="pt-3 cursor-pointer pb-6 flex items-center space-x-12">
         <div
-          onClick={() => setCategory("Farm")}
+          onClick={() => setCategory("farm")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "Farm" ? "border-gray-800" : "border-white"
+            dataCategory == "farm" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/farm.png" alt="farm" width={30} height={30} />
@@ -21,9 +21,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("Pool")}
+          onClick={() => setCategory("pool")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "Pool" ? "border-gray-800" : "border-white"
+            dataCategory == "pool" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/pool.png" alt="pool" width={30} height={30} />
@@ -31,9 +31,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("LakeView")}
+          onClick={() => setCategory("lakeView")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "LakeView" ? "border-gray-800" : "border-white"
+            dataCategory == "lakeView" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/lake.png" alt="lake" width={30} height={30} />
@@ -41,9 +41,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("Golfing")}
+          onClick={() => setCategory("golfing")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "Golfing" ? "border-gray-800" : "border-white"
+            dataCategory == "golfing" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/golf.png" alt="golf" width={30} height={30} />
@@ -51,9 +51,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("Trending")}
+          onClick={() => setCategory("trending")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "Trending" ? "border-gray-800" : "border-white"
+            dataCategory == "trending" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/trending.png" alt="tending" width={30} height={30} />
@@ -61,9 +61,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("AmazingVew")}
+          onClick={() => setCategory("amazingVew")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "AmazingView" ? "border-gray-800" : "border-white"
+            dataCategory == "amazingView" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/view.png" alt="view" width={30} height={30} />
@@ -71,9 +71,9 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("Cabin")}
+          onClick={() => setCategory("cabin")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "Cabin" ? "border-gray-800" : "border-white"
+            dataCategory == "cabin" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}
         >
           <Image src="/cabin.png" alt="cabin" width={30} height={30} />
