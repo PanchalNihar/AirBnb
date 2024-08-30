@@ -14,7 +14,15 @@ const apiService = {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => {return response.json()})
+        .then((response) => {
+          if (
+            response.headers.get("Content-Type")?.includes("application/json")
+          ) {
+            return response.json();
+          } else {
+            console.log("Response is not JSON");
+          }
+        })
         .then((json) => {
           console.log("Response:", json);
 
@@ -39,7 +47,7 @@ const apiService = {
           Authorization: `Bearer ${token}`,
         },
       })
-        .then((response) => response.json())
+        .then((response) =>{ return response.json()})
         .then((json) => {
           console.log("Response:", json);
 
