@@ -1,6 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/landlords/[id]/page": "app/landlords/[id]/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/properties/[id]/page": "app/properties/[id]/page.js"
-}
+{}
