@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       colors:{
-        'airbnb':"#ff385c",
-        'airbnb-dark':'#d50027'
+        'airbnb':"#336A86",
+        'airbnb-dark':'#8EAEC4'
       }
     },
   },

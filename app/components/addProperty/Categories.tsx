@@ -61,7 +61,7 @@ const Categories: React.FC<CategoriesProp> = ({
         </div>
 
         <div
-          onClick={() => setCategory("amazingVew")}
+          onClick={() => setCategory("amazingView")}
           className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
             dataCategory == "amazingView" ? "border-gray-800" : "border-white"
           }  opacity-60 hover:border-gray-300 hover:opacity-100`}

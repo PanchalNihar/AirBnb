@@ -1,7 +1,5 @@
 "use server";
 import { cookies } from "next/headers";
-import { ValueContainer } from "react-select/animated";
-
 // Function to handle login and set cookies
 export async function handleLogin(userId:string, accessToken:string, refreshToken:string) {
   console.log("Setting tokens:", { userId, accessToken, refreshToken }); // Debugging line

@@ -22,7 +22,7 @@ const AddPropertyButton:React.FC<AddPropertyButtonProp> = ({
       onClick={airbnbYourHome}
       className="p-2 text-sm font-semibold rounded-full hover:bg-gray-200 cursor-pointer"
     >
-      AirBnb your home
+      VacyStay your home
     </div>
   );
 };

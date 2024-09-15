@@ -49,11 +49,25 @@ const UserNav: React.FC<userNavProps> = ({ userId }) => {
         <div className="flex flex-col cursor-pointer w-[220px] absolute top-[60px] right-0 bg-white-200 border rounded-xl shadow-md">
           {userId ? (
             <>
+            {/* <MenuLink
+                label="Inbox"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push('/inbox');
+                }}
+              /> */}
             <MenuLink
                 label="My Properties"
                 onClick={() => {
                   setIsOpen(false);
                   router.push('/myproperties');
+                }}
+              />
+              <MenuLink
+                label="My Favourites"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push('/myfavourites');
                 }}
               />
               <MenuLink

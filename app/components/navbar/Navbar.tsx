@@ -12,7 +12,7 @@ const Navbar = async () => {
         <div className="flex justify-between items-center">
           <Link href="/">
             <Image
-              src="/airbnb.png"
+              src="/logo.png"
               alt="bnb logo"
               width={100}
               height={38}

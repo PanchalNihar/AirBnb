@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Content, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar/Navbar";
+import SearchModal from "./components/modals/SearchModal";
 const inter = Inter({ subsets: ["latin"] });
 import Modal from "./components/modals/Modals";
 import AddPropertModal from "./components/modals/AddPropertyModal";
@@ -31,6 +32,7 @@ export default function RootLayout({
        content={Content}
        isOpen={true}/> */}
        <LoginModal/>
+       <SearchModal/>
        <SignupModal/>
        <AddPropertModal/>
       </body>
