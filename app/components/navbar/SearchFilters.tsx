@@ -1,36 +1,37 @@
 'use client';
 import useSearchModal from "@/app/hooks/useSearchModal";
 const SearchFilters = () => {
-  const searchModal=useSearchModal()
+  const searchModal = useSearchModal();
   return (
     <div 
-    onClick={()=>searchModal.open('location')}
-    className="h-[48px] lg:h-[64px] flex flex-row items-center justify-between border rounded-full">
+      onClick={() => searchModal.open('location')}
+      className="h-[48px] lg:h-[64px] flex flex-row items-center justify-between border border-gray-300 rounded-full shadow-sm hover:shadow-md transition-shadow"
+    >
       <div className="hidden lg:block">
-        <div className="flex felx-row items-center justify-between">
-          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
-            <p className="text-xs font-semibold">where</p>
-            <p className="text-sm">Search Destinations</p>
+        <div className="flex flex-row items-center justify-between">
+          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-3xl hover:bg-gray-200 transition-colors">
+            <p className="text-xs font-semibold text-gray-600">Where</p>
+            <p className="text-sm text-gray-900">Search Destinations</p>
           </div>
 
-          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
-            <p className="text-xs font-semibold">check-in</p>
-            <p className="text-sm">Add Dates</p>
+          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-3xl hover:bg-gray-200 transition-colors">
+            <p className="text-xs font-semibold text-gray-600">Check-in</p>
+            <p className="text-sm text-gray-900">Add Dates</p>
           </div>
 
-          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
-            <p className="text-xs font-semibold">Chech-out</p>
-            <p className="text-sm">Add Dates</p>
+          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-3xl hover:bg-gray-200 transition-colors">
+            <p className="text-xs font-semibold text-gray-600">Check-out</p>
+            <p className="text-sm text-gray-900">Add Dates</p>
           </div>
 
-          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-full hover:bg-gray-100">
-            <p className="text-xs font-semibold">Who</p>
-            <p className="text-sm">Add Guests</p>
+          <div className="cursor-pointer h-[48px] lg:h-[64px] px-8 flex flex-col justify-center rounded-3xl hover:bg-gray-200 transition-colors">
+            <p className="text-xs font-semibold text-gray-600">Who</p>
+            <p className="text-sm text-gray-900">Add Guests</p>
           </div>
         </div>
       </div>
       <div className="p-2">
-        <div className="p-2 lg:p-4 bg-airbnb rounded-full hover:bg-airbnb-dark transition cursor-pointer">
+        <div className="p-2 lg:p-4 bg-airbnb rounded-full lg:rounded-3xl hover:bg-airbnb-dark transition-all transform hover:scale-105 cursor-pointer">
           <svg
             viewBox="0 0 32 32"
             aria-hidden="true"

@@ -1,4 +1,4 @@
-// File: D:\SEM 4\AirBnb\airbnb\app\page.tsx
+// File: D:\SEM 4\VacyStay\airbnb\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

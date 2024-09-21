@@ -6,7 +6,6 @@ import { useState } from "react";
 import CustomButtons from "../forms/CustomButtons";
 import { Range } from "react-date-range";
 import DatePicker from "../forms/Calendar";
-import da from "date-fns/esm/locale/da/index.js";
 const initialDateRange = {
   startDate: new Date(),
   endDate: new Date(),

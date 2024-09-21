@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Modal from "./Modals";
 import Categories from "../addProperty/Categories";
-import LoginModal from "./LoginModal";
 import usePropertyModal from "@/app/hooks/usePropertyModal";
 import CustomButtons from "../forms/CustomButtons";
 import { ChangeEvent, useState } from "react";
