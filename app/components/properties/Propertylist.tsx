@@ -49,7 +49,7 @@ const Propertylist: React.FC<PropertyListProps> = ({
     if (landlord_id) {
       url += `?landlord_id=${landlord_id}`;
     } else if (favourites) {
-      url += `?is_favourite=true`;
+      url += `?is_favourites=true`;
       console.log("fav: ",url)
     }else{
       let urlQuery=''
@@ -62,20 +62,20 @@ const Propertylist: React.FC<PropertyListProps> = ({
       if(numBathrooms){
         urlQuery+=`&numBathrooms=${numBathrooms}`
       }
-      if(numBedrooms){
-        urlQuery+=`&Category=${category}`
-      }
       if(category){
+        urlQuery+=`&category=${category}`
+      }
+      if(numBedrooms){
         urlQuery+=`&numBedrooms=${numBedrooms}`
       }
       if(checkinDate){
-        urlQuery+=`&checkin=${format(checkinDate,'yyyy-mm-dd')}`
+        urlQuery+=`&checkin=${format(checkinDate,'yyyy-MM-dd')}`
       }
       if(checkoutDate){
-        urlQuery+=`&checkout=${format(checkoutDate,'yyyy-mm-dd')}`
+        urlQuery+=`&checkout=${format(checkoutDate,'yyyy-MM-dd')}`
       }
       if(urlQuery.length){
-        console.log('Query Url:',urlQuery)
+        // console.log('Query Url:',urlQuery)
         urlQuery='?'+urlQuery.substring(1)
         url+=urlQuery
       }

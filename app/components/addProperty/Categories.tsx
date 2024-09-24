@@ -1,86 +1,49 @@
-import Image from "next/image";
-interface CategoriesProp {
-  dataCategory: string;
-  setCategory: (category: string) => void;
+import Image from 'next/image';
+
+interface CategoriesProps {
+    selectedCategory: string;
+    setCategory: (category: string) => void;
 }
-const Categories: React.FC<CategoriesProp> = ({
-  dataCategory,
-  setCategory,
+
+const Categories: React.FC<CategoriesProps> = ({
+    selectedCategory,
+    setCategory
 }) => {
-  return (
-    <>
-      <div className="pt-3 cursor-pointer pb-6 flex items-center space-x-12">
-        <div
-          onClick={() => setCategory("farm")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "farm" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/farm.png" alt="farm" width={30} height={30} />
-          <span className="text-xs">Farms</span>
-        </div>
+    const categories = [
+        { name: "Beach", key: "beach", icon: "/beach.png" },
+        { name: "Golfing", key: "golfing", icon: "/golf.png" },
+        { name: "Cabins", key: "cabins", icon: "/cabin.png" },
+        { name: "Farm", key: "farm", icon: "/farm.png" },
+        { name: "Lake", key: "lakeView", icon: "/lake.png" },
+        { name: "Pool", key: "pool", icon: "/pool.png" },
+        { name: "Houseboat", key: "houseboat", icon: "/houseboat.png" },
+        { name: "Barn", key: "barn", icon: "/barn.png" },
+        { name: "Island", key: "island", icon: "/island.png" },
+        { name: "Desert", key: "desert", icon: "/desert.png" },
+    ];
 
-        <div
-          onClick={() => setCategory("pool")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "pool" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/pool.png" alt="pool" width={30} height={30} />
-          <span className="text-xs">Pool</span>
+    return (
+        <div className="pt-4 pb-6 flex flex-wrap justify-center gap-4">
+            {categories.map(({ name, key, icon }) => (
+                <div 
+                    key={key}
+                    onClick={() => setCategory(key)}
+                    className={`p-4 flex flex-col items-center space-y-2 rounded-lg shadow-lg 
+                        ${selectedCategory === key ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white' : 'bg-white text-gray-700'} 
+                        transform hover:scale-105 transition-transform duration-300 cursor-pointer hover:shadow-xl`}
+                >
+                    <Image
+                        src={icon}
+                        alt={`Category - ${name}`}
+                        width={40}
+                        height={40}
+                        className={`${selectedCategory === key ? 'opacity-100' : 'opacity-80'}`}
+                    />
+                    <span className='text-sm font-medium'>{name}</span>
+                </div>
+            ))}
         </div>
+    );
+}
 
-        <div
-          onClick={() => setCategory("lakeView")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "lakeView" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/lake.png" alt="lake" width={30} height={30} />
-          <span className="text-xs">Lakeview</span>
-        </div>
-
-        <div
-          onClick={() => setCategory("golfing")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "golfing" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/golf.png" alt="golf" width={30} height={30} />
-          <span className="text-xs">Golfing</span>
-        </div>
-
-        <div
-          onClick={() => setCategory("trending")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "trending" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/trending.png" alt="tending" width={30} height={30} />
-          <span className="text-xs">Trending</span>
-        </div>
-
-        <div
-          onClick={() => setCategory("amazingView")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "amazingView" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/view.png" alt="view" width={30} height={30} />
-          <span className="text-xs">Amazing View</span>
-        </div>
-
-        <div
-          onClick={() => setCategory("cabin")}
-          className={`pd-4 flex flex-col items-center space-y-2 border-b-2 ${
-            dataCategory == "cabin" ? "border-gray-800" : "border-white"
-          }  opacity-60 hover:border-gray-300 hover:opacity-100`}
-        >
-          <Image src="/cabin.png" alt="cabin" width={30} height={30} />
-          <span className="text-xs">Cabin</span>
-        </div>
-      </div>
-    </>
-  );
-};
 export default Categories;

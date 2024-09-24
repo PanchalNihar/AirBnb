@@ -57,6 +57,7 @@ const ReservationSidebar: React.FC<ReservationSidebarProps> = ({
         );
 
         if (response.success) {
+          alert("Booked!!!")
           console.log("Booked!!");
         } else {
           console.log("Error in Booking");

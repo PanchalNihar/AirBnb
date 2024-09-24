@@ -1,4 +1,4 @@
-// File: D:\SEM 4\VacyStay\airbnb\app\myreservation\page.tsx
+// File: D:\SEM 4\VacyStay\vacystay\app\myreservation\page.tsx
 import * as entry from '../../../../app/myreservation/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

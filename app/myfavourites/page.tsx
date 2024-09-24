@@ -1,6 +1,5 @@
-// import PropertyList from "../components/properties/PropertyList";
 import { getUserId } from "../lib/actions";
-
+import Propertylist from "../components/properties/Propertylist";
 const MyFavoritesPage = async () => {
     const userId = await getUserId();
 
@@ -17,9 +16,7 @@ const MyFavoritesPage = async () => {
             <h1 className="my-6 text-2xl">My favorites</h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {/* <PropertyList  */}
-                    {/* // favorites={true} */}
-                {/* /> */}
+            <Propertylist favourites={true}/>
             </div>
         </main>
     )

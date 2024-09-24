@@ -23,7 +23,7 @@ const AddPropertyButton: React.FC<AddPropertyButtonProp> = ({
   return (
     <div
       onClick={airbnbYourHome}
-      className="p-3 px-6 text-sm font-semibold text-gray-800 border border-gray-300 rounded-full shadow-sm hover:shadow-md transition-all hover:bg-gray-100 cursor-pointer transform hover:scale-105 active:scale-95"
+      className="p-3 px-6 text-sm font-semibold text-white border border-gray-300 rounded-full shadow-sm hover:shadow-md transition-all cursor-pointer transform hover:scale-105 active:scale-95 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600"
     >
       VacyStay your home
     </div>

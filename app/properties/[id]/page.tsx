@@ -15,15 +15,17 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
         <p>Property details could not be loaded. Please try again later.</p>
       );
     }
-
+    console.log("Property fetched: ", property);
+    const landlordName = property.landlord?.name || "Host unavailable";
+    const landlordAvatar = property.landlord?.avatar_url || "/1.jpg";
     return (
       <main className="max-w-[1500px] mx-auto px-6 pb-6">
-        <div className="w-full h-[64vh] mb-4 overflow-hidden rounded-xl relative">
+        <div className="relative w-full h-[64vh] mb-4 overflow-hidden rounded-xl">
           <Image
-            fill
             src={property.image_url}
-            className="object-cover w-full h-full"
-            alt="Beach house"
+            layout="fill" // Or use `fill` directly as you were before
+            objectFit="cover" // Ensures the image covers the entire div without distortion
+            alt="Property Image"
           />
         </div>
 
@@ -42,9 +44,9 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
               href={`/landlords/${property.landlord?.id}`}
               className="py-6 flex items-center space-x-4"
             >
-              {property.landlord?.avatar_url && (
+              {landlordAvatar && (
                 <Image
-                  src={property.landlord?.avatar_url}
+                  src={landlordAvatar}
                   width={50}
                   height={50}
                   className="rounded-full"
@@ -53,7 +55,7 @@ const PropertyDetailPage = async ({ params }: { params: { id: string } }) => {
               )}
 
               <p>
-                <strong>{property.landlord?.name}</strong> is your host
+                <strong>{landlordName}</strong> your host
               </p>
             </Link>
 
