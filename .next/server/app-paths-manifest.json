@@ -1,7 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/myfavourites/page": "app/myfavourites/page.js",
   "/properties/[id]/page": "app/properties/[id]/page.js",
-  "/myreservation/page": "app/myreservation/page.js",
-  "/myproperties/page": "app/myproperties/page.js"
+  "/page": "app/page.js"
 }

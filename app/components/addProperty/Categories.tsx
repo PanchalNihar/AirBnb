@@ -20,6 +20,8 @@ const Categories: React.FC<CategoriesProps> = ({
         { name: "Barn", key: "barn", icon: "/barn.png" },
         { name: "Island", key: "island", icon: "/island.png" },
         { name: "Desert", key: "desert", icon: "/desert.png" },
+        { name: "Cave", key: "cave", icon: "/cave.png" },
+        { name: "Tropical", key: "tropical", icon: "/tropical.png" },
     ];
 
     return (

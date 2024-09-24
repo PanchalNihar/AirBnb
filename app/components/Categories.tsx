@@ -37,7 +37,9 @@ const Categories = () => {
         { name: "Houseboat", category: "houseboat", icon: "/houseboat.png" },
         { name: "Barn", category: "barn", icon: "/barn.png" },
         { name: "Island", category: "island", icon: "/island.png" },
-        { name: "Desert", category: "desert", icon: "/island.png" },
+        { name: "Desert", category: "desert", icon: "/desert.png" },
+        { name: "Cave", category: "cave", icon: "/cave.png" },
+        { name: "Tropical", category: "tropical", icon: "/tropical.png" },
       ].map(({ name, category: categoryKey, icon }) => (
         <div
           key={categoryKey}
